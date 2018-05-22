@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInfinitive"
+        android:text="go"
+        android:layout_weight="0.2"/>
+
+    <TextView
+        android:layout_width="0pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPastSimple"
+        android:layout_weight="0.2"
+        android:text="went"/>
+
+    <TextView
+        android:layout_width="0pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPastParticiple"
+        android:layout_weight="0.2"
+        android:text="gone"/>
+    <TextView
+        android:layout_width="0pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTranslation"
+        android:layout_weight="0.4"
+        android:text="идти"/>
+
+</LinearLayout>
+
