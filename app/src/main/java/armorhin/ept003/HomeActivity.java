@@ -45,11 +45,14 @@ public class HomeActivity extends AppCompatActivity{
     }
 }
 
-//todo dictionary
-//todo dictionary verb
-//todo theory
+    //todo dictionary
+    //todo theory
     //todo ekran tem
     //todo ekran s teoriei
-//todo zadaniya
-    //todo temi zadaniy
     //todo zadaniya
+    //todo tasks
+
+    //todo SQL vebs
+    //todo SQL words
+    //todo SQL task
+    //todo SQL theory

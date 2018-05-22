@@ -20,7 +20,8 @@
         <activity android:name=".DictionaryActivity" />
         <activity android:name=".TheoryActivity" />
         <activity android:name=".PracticeActivity" />
-        <activity android:name=".VerbActivity"></activity>
+        <activity android:name=".VerbActivity" />
+        <activity android:name=".TheoryThemeActivity"></activity>
     </application>
 
 </manifest>
