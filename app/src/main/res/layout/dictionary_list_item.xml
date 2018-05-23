@@ -8,20 +8,22 @@
 
     <TextView
         android:id="@+id/txtWord"
-        android:layout_width="0dp"
+        android:layout_width="178dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_marginStart="8dp"
+        android:layout_weight="0.5"
         android:text="a"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/txtTrans"
-        android:layout_width="0dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="0.5"
         android:text="неопределенный артикль"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>
