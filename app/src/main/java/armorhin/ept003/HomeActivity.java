@@ -51,7 +51,6 @@ public class HomeActivity extends AppCompatActivity{
     //todo zadaniya
     //todo tasks
 
-    //todo SQL vebs
     //todo SQL words
     //todo SQL task
     //todo SQL theory
