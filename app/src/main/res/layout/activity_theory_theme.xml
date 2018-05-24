@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="armorhin.ept003.TheoryThemeActivity">
 
+    <TextView
+        android:id="@+id/textTheory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="140dp" />
 </android.support.constraint.ConstraintLayout>
