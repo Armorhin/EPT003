@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="armorhin.ept003.VerbActivity">
+    tools:context="armorhin.ept003.activity.VerbActivity">
 
 
     <ListView

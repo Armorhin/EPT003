@@ -1,4 +1,4 @@
-package armorhin.ept003;
+package armorhin.ept003.helper;
 
 import android.content.Context;
 import android.database.SQLException;
@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
-    private static String DB_NAME = "DataBase.db";
+    private static String DB_NAME = "database.db";
     private static String DB_PATH = "";
     private static final int DB_VERSION = 1;
 

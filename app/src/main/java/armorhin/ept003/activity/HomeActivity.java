@@ -1,4 +1,4 @@
-package armorhin.ept003;
+package armorhin.ept003.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import armorhin.ept003.R;
+
 /**
  * Created by mrdoc on 08.05.2018.
  */
 
-public class HomeActivity extends AppCompatActivity{
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +22,9 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.theoryBtn:
-                Intent iTheory = new Intent(HomeActivity.this, TheoryActivity.class);
+                Intent iTheory = new Intent(HomeActivity.this, TheoryThemeActivity.class);
                 startActivity(iTheory);
 
                 break;
@@ -45,12 +47,12 @@ public class HomeActivity extends AppCompatActivity{
     }
 }
 
-    //todo theory
-    //todo ekran tem
-    //todo ekran s teoriei
-    //todo zadaniya
-    //todo tasks
+//todo theory
+//todo ekran tem
+//todo ekran s teoriei
+//todo zadaniya
+//todo tasks
 
-    //todo SQL words
-    //todo SQL task
-    //todo SQL theory
+//todo SQL words
+//todo SQL task
+//todo SQL theory

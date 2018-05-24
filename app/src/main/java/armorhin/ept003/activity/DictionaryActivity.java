@@ -1,16 +1,21 @@
-package armorhin.ept003;
+package armorhin.ept003.activity;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 
 import java.io.IOException;
 
+import armorhin.ept003.R;
+import armorhin.ept003.helper.DatabaseHelper;
+
 public class DictionaryActivity extends AppCompatActivity {
 
+    SearchView search;
     ListView listDictionary;
     SimpleCursorAdapter scAdapter;
     private DatabaseHelper mDBHelper;
@@ -56,4 +61,7 @@ public class DictionaryActivity extends AppCompatActivity {
         //Закрываем соединение с базой данных
         mDBHelper.close();
     }
+
+
+
 }

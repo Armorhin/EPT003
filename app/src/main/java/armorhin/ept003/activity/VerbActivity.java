@@ -1,15 +1,16 @@
-package armorhin.ept003;
+package armorhin.ept003.activity;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import java.io.IOException;
+
+import armorhin.ept003.R;
+import armorhin.ept003.helper.DatabaseHelper;
 
 
 public class VerbActivity extends AppCompatActivity {

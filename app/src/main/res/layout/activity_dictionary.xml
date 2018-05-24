@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="armorhin.ept003.DictionaryActivity">
+    tools:context="armorhin.ept003.activity.DictionaryActivity">
 
     <ListView
         android:id="@+id/listDictionary"
@@ -14,7 +14,7 @@
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchDictionary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
