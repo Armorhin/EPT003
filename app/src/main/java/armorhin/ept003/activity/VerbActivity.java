@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -50,10 +51,8 @@ public class VerbActivity extends AppCompatActivity {
 
         // на базе курсора создаем адаптер, используя все заготовленные параметры и данные.
         scAdapter = new SimpleCursorAdapter(this, R.layout.verb_list_item, c, headers, fields, SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
-
         listVerb = (ListView) findViewById(R.id.listVerb);
         listVerb.setAdapter(scAdapter);
-
     }
 
     @Override
