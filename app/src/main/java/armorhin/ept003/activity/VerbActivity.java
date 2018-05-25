@@ -4,8 +4,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.FilterQueryProvider;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 
 import java.io.IOException;
@@ -16,6 +20,7 @@ import armorhin.ept003.helper.DatabaseHelper;
 
 public class VerbActivity extends AppCompatActivity {
 
+    private static final String TAG = VerbActivity.class.getName();
     ListView listVerb;
     SimpleCursorAdapter scAdapter;
     private DatabaseHelper mDBHelper;
@@ -51,9 +56,61 @@ public class VerbActivity extends AppCompatActivity {
 
         // на базе курсора создаем адаптер, используя все заготовленные параметры и данные.
         scAdapter = new SimpleCursorAdapter(this, R.layout.verb_list_item, c, headers, fields, SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+        scAdapter.setFilterQueryProvider(new FilterQueryProvider() {
+            @Override
+            public Cursor runQuery(CharSequence constraint) {
+                return null;
+            }
+        });
         listVerb = (ListView) findViewById(R.id.listVerb);
         listVerb.setAdapter(scAdapter);
+
+        SearchView searchTxt = findViewById(R.id.searchViewVerb);
+        searchTxt.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return filter(query);
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return filter(newText);
+            }
+
+            boolean filter(String text){
+               // todo Делаем выборку и меняем адаптер для списка
+                Log.d(TAG,text);
+
+                //виджеты в плашке для отдельного элемента списка
+                int[] fields = new int[]{R.id.txtInfinitive, R.id.txtPastSimple, R.id.txtPastParticiple, R.id.txtTranslation};
+
+                // заголовки столбцов результирующей таблицы-выборки из базы данных
+                String[] headers = new String[]{"infinitive", "pastsimple", "pastparticiple", "translation"};
+
+                // сделаем выборку данных из базы данных, указав необходимые столбцы и таблицу
+                // последний параметр null означает, что мы не делаем фильтрацию, выбирам все строки таблицы БД.
+                Cursor c = mDb.rawQuery("SELECT id AS _id, infinitive, pastsimple, pastparticiple, translation FROM verbs WHERE (infinitive LIKE ?) OR (pastsimple LIKE ?)", new String[]{text+"%" , text+"%" });
+                Log.d(TAG, "cursor finished");
+
+                int count = c.getCount();
+                Log.d(TAG, String.valueOf(count));
+                // на базе курсора создаем адаптер, используя все заготовленные параметры и данные.
+                scAdapter = new SimpleCursorAdapter(VerbActivity.this, R.layout.verb_list_item, c, headers, fields, SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+                Log.d(TAG, "adapter changed");
+                listVerb.setAdapter(scAdapter);
+
+                Log.d(TAG, "listview changed");
+               return false;
+            }
+        });
+
+
     }
+
+
+
+
+
 
     @Override
     protected void onDestroy() {
