@@ -13,7 +13,7 @@ import armorhin.ept003.entity.Question;
  */
 
 
-@Database(entities = {Answer.class, Question.class}, version = 1)
+@Database(entities = {Answer.class, Question.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract AnswerDao getAnswerDao();

@@ -65,7 +65,7 @@ public class VerbActivity extends AppCompatActivity {
         listVerb = (ListView) findViewById(R.id.listVerb);
         listVerb.setAdapter(scAdapter);
 
-        SearchView searchTxt = findViewById(R.id.searchViewVerb);
+        SearchView searchTxt = findViewById(R.id.searchVerb);
         searchTxt.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -78,7 +78,7 @@ public class VerbActivity extends AppCompatActivity {
             }
 
             boolean filter(String text){
-               // todo Делаем выборку и меняем адаптер для списка
+
                 Log.d(TAG,text);
 
                 //виджеты в плашке для отдельного элемента списка
@@ -89,17 +89,13 @@ public class VerbActivity extends AppCompatActivity {
 
                 // сделаем выборку данных из базы данных, указав необходимые столбцы и таблицу
                 // последний параметр null означает, что мы не делаем фильтрацию, выбирам все строки таблицы БД.
-                Cursor c = mDb.rawQuery("SELECT id AS _id, infinitive, pastsimple, pastparticiple, translation FROM verbs WHERE (infinitive LIKE ?) OR (pastsimple LIKE ?)", new String[]{text+"%" , text+"%" });
-                Log.d(TAG, "cursor finished");
+                Cursor c = mDb.rawQuery("SELECT id AS _id, infinitive, pastsimple, pastparticiple, translation FROM verbs WHERE (infinitive LIKE ?) OR (pastsimple LIKE ?) OR (pastparticiple LIKE ?) OR (translation LIKE ?)", new String[]{text+"%" , text+"%",text+"%",text+"%" });
 
                 int count = c.getCount();
-                Log.d(TAG, String.valueOf(count));
                 // на базе курсора создаем адаптер, используя все заготовленные параметры и данные.
                 scAdapter = new SimpleCursorAdapter(VerbActivity.this, R.layout.verb_list_item, c, headers, fields, SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
-                Log.d(TAG, "adapter changed");
                 listVerb.setAdapter(scAdapter);
 
-                Log.d(TAG, "listview changed");
                return false;
             }
         });

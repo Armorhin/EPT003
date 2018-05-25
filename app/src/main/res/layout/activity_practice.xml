@@ -10,10 +10,17 @@
         android:id="@+id/txtPractice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="0.2"
         android:text=""
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/answer1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/answer3"
@@ -26,6 +33,7 @@
         android:onClick="onAnswerClick"
         android:text=""
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -41,6 +49,7 @@
         android:onClick="onAnswerClick"
         android:text=""
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/answer3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -56,6 +65,7 @@
         android:onClick="onAnswerClick"
         android:text=""
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/answer2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
